@@ -1,0 +1,177 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  font-family: 'Times New Roman', Times, serif;
+  background-color: #fff1ee;
+  box-sizing: border-box;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Line below the HOME section */
+.line {
+  width: 100%;
+  border-top: 1px solid #333;
+  margin: -10px auto 0 auto;
+}
+
+/* Navbar styles */
+nav {
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+  justify-content: center; /* Center items horizontally */
+  gap: 10px; /* Space between buttons */
+  padding: 10px;
+  background-color: #fff1ee;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+  background-color: #fff1ee;
+  padding: 10px 15px; /* Adjust padding for smaller screens */
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 1.2rem; /* Scaled down text for better fit */
+  transition: background-color 0.3s ease;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+nav a:hover {
+  background-color: #d8bcb7;
+}
+
+.nav-icon {
+  width: 60px;
+  height: auto;
+  vertical-align: middle;
+}
+
+/* Rounded rectangle container */
+.rounded-rectangle {
+  margin: 20px auto;
+  padding: 10px; /* Reduced padding for smaller screens */
+  border: 2px solid #333;
+  border-radius: 25px;
+  background-color: #fff1ee;
+  max-width: 1000px;
+  width: 90%; /* Responsive width */
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap; /* Allows wrapping on smaller screens */
+  justify-content: space-evenly;
+  align-items: center;
+  word-wrap: break-word; /* Ensures text doesn't overflow */
+  overflow-wrap: break-word;
+  box-sizing: border-box; /* Ensures padding is included in width */
+}
+
+.rounded-rectangle a {
+  text-decoration: none;
+  color: #333;
+  background-color: #fff1ee;
+  padding: 10px 15px; /* Reduced padding for better fit */
+  border-radius: 5px;
+  font-weight: 500;
+  font-size: 1.2rem; /* Smaller font size for responsiveness */
+  font-family: 'Times New Roman', Times, serif;
+  word-wrap: break-word; /* Prevent link text from overflowing */
+}
+
+/* Menu container */
+.menu-container {
+  display: flex;
+  flex-wrap: wrap; /* Allows wrapping to the next row if needed */
+  gap: 20px; /* Space between menu items */
+  justify-content: center;
+  padding: 20px;
+}
+
+.menu-item {
+  display: flex;
+  flex-direction: column; /* Keeps content in a vertical stack */
+  align-items: center;
+  width: 200px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.menu-image {
+  width: 100%; /* Makes the image fit the item width */
+  height: auto;
+  border-radius: 10px;
+}
+
+.menu-title {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.item-name,
+.item-price {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.menu-sizes {
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+/* Media queries for responsiveness */
+
+/* Phones (max-width: 600px) */
+@media (max-width: 600px) {
+  nav {
+    display: flex;
+    flex-direction: column; /* Stack navbar items vertically */
+    align-items: center; /* Center items when stacked */
+    gap: 5px; /* Reduce spacing */
+    overflow: hidden; /* Ensure no scrolling */
+  }
+
+  nav a {
+    font-size: 1rem; /* Reduce font size */
+    padding: 8px 10px; /* Reduce padding for better fit */
+    width: 100%; /* Make links full-width for easy tapping */
+    text-align: center; /* Center align text */
+  }
+
+  .nav-menu {
+    display: none; /* Hide menu by default */
+  }
+
+  .nav-toggle {
+    display: block; /* Show the toggle button */
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+
+  .nav-toggle.active + .nav-menu {
+    display: flex; /* Show the menu when toggle is active */
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .rounded-rectangle {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    padding: 5px; /* Further reduced padding for small screens */
+    gap: 10px; /* Spacing between items */
+    width: 100%; /* Full width */
+    overflow: hidden; /* Prevent scrolling */
+  }
+
+  .rounded-rectangle a {
+    font-size: 1rem; /* Smaller font size */
+    padding: 8px 12px; /* Adjusted padding */
+  }
+}
