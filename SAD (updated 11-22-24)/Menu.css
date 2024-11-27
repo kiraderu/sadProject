@@ -1,59 +1,67 @@
-body, html {
+* {
   margin: 0;
   padding: 0;
-  width: 100%;
-  font-family: 'Times New Roman', Times, serif;
-  background-color: #fff1ee;
   box-sizing: border-box;
-  overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
-/* Line below the HOME section */
-.line {
-  width: 100%;
-  border-top: 1px solid #333;
-  margin: -10px auto 0 auto;
-}
-
-/* Navbar styles */
-nav {
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to right, #C4A69F, #fff1ee);
   display: flex;
-  flex-wrap: wrap; /* Allow items to wrap on smaller screens */
-  justify-content: center; /* Center items horizontally */
-  gap: 10px; /* Space between buttons */
-  padding: 10px;
-  background-color: #fff1ee;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+}
+
+
+nav {
+  text-align: center;
+  margin-top: -30px; /* Adjust for spacing above */
+  margin-bottom: 10px; /* Adjust for spacing below */
+  width: 100%;;
 }
 
 nav a {
-  text-decoration: none;
-  color: #333;
-  background-color: #fff1ee;
-  padding: 10px 15px; /* Adjust padding for smaller screens */
+  text-decoration: none; /* Removes underline */
+  color: #333; /* Text color */
+  background-color: (#fff1ee, 0.2); /* Button background */
+  padding: 20px 100px;
+  margin: 0 -50px;
   border-radius: 5px;
   font-weight: bold;
-  font-size: 1.2rem; /* Scaled down text for better fit */
-  transition: background-color 0.3s ease;
+  display: inline-block;
+  font-size: 24px; /* Adjust the size here */
   font-family: 'Times New Roman', Times, serif;
 }
 
 nav a:hover {
-  background-color: #d8bcb7;
+  background-color: (#fff1ee, 0.2); /* Change color on hover */
 }
 
+/* Style the image */
 .nav-icon {
-  width: 60px;
-  height: auto;
-  vertical-align: middle;
+  width: 100px;    /* Adjust the width as needed */
+  height: auto;   /* Maintain the aspect ratio */
+  margin: 0 10px; /* Adjust space between buttons and image */
+  vertical-align: middle; /* Align image with text */
+}
+/* Line below navigation */
+.line {
+  position: relative; /* Position it relative to its normal flow */
+  top: 0; /* Adjust if necessary */
+  width: 100%;
+  border-top: 1px solid #333;
+  margin: -30px auto;
 }
 
 /* Rounded rectangle container */
 .rounded-rectangle {
-  margin: 20px auto;
+  margin: 50px auto;
   padding: 10px; /* Reduced padding for smaller screens */
   border: 2px solid #333;
   border-radius: 25px;
-  background-color: #fff1ee;
+  background-color: #C4A69F;
   max-width: 1000px;
   width: 90%; /* Responsive width */
   text-align: center;
@@ -69,7 +77,7 @@ nav a:hover {
 .rounded-rectangle a {
   text-decoration: none;
   color: #333;
-  background-color: #fff1ee;
+  background-color: #C4A69F;
   padding: 10px 15px; /* Reduced padding for better fit */
   border-radius: 5px;
   font-weight: 500;
@@ -85,6 +93,7 @@ nav a:hover {
   gap: 20px; /* Space between menu items */
   justify-content: center;
   padding: 20px;
+  margin-top: -50px;
 }
 
 .menu-item {
@@ -123,55 +132,98 @@ nav a:hover {
   margin-top: 5px;
 }
 
-/* Media queries for responsiveness */
-
-/* Phones (max-width: 600px) */
 @media (max-width: 600px) {
+  body {
+    padding: 10px; /* Reduce padding for smaller screens */
+    height: auto; /* Allow content to expand naturally */
+  }
+
   nav {
     display: flex;
-    flex-direction: column; /* Stack navbar items vertically */
-    align-items: center; /* Center items when stacked */
-    gap: 5px; /* Reduce spacing */
-    overflow: hidden; /* Ensure no scrolling */
-  }
+    flex-direction: row; /* Keep items in a row */
+    align-items: row; /* Center the items vertically */
+    justify-content: center; /* Center items horizontally if you want */
+    gap: 102px; /* Space between the items */
+    margin-top: 20px; /* Adjust for some top spacing */
+    margin-bottom: 20px; /* Adjust bottom spacing */
+    width: 100%; /* Ensure the nav takes full width */
+  
 
+  }
   nav a {
-    font-size: 1rem; /* Reduce font size */
-    padding: 8px 10px; /* Reduce padding for better fit */
-    width: 100%; /* Make links full-width for easy tapping */
-    text-align: center; /* Center align text */
+    padding: 10px 5px; /* Adjust padding for better clickability */
+    font-size: 14px; /* Adjust font size */
+    text-decoration: none; /* Remove underline */
+    color: #333; /* Text color */
+    border-radius: 5px; /* Optional rounded corners */
+    width: auto; /* Make the links adjust to the content */
+    text-align: center; /* Center text horizontally */
+    display: flex; /* Use flex to control content alignment */
+    margin-top: 5px;
+    justify-content: center; /* Center text horizontally */
   }
 
-  .nav-menu {
-    display: none; /* Hide menu by default */
+  .nav-icon {
+    width: 50px; /* Smaller icons */
+    margin-right: -50px;
+    margin-left: -50px;
   }
 
-  .nav-toggle {
-    display: block; /* Show the toggle button */
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-  }
-
-  .nav-toggle.active + .nav-menu {
-    display: flex; /* Show the menu when toggle is active */
-    flex-direction: row;
-    align-items: center;
-    gap: 10px;
+  .line {
+    margin: 5px auto; /* Adjust spacing for smaller screens */
+    margin-top: -20px;
   }
 
   .rounded-rectangle {
-    display: flex;
-    flex-direction: column; /* Stack items vertically */
-    padding: 5px; /* Further reduced padding for small screens */
-    gap: 10px; /* Spacing between items */
-    width: 100%; /* Full width */
-    overflow: hidden; /* Prevent scrolling */
+    margin: 20px auto; /* Reduce margin for compact layout */
+    padding: 5px; /* Smaller padding */
+    width: 100%; /* Full width on mobile */
+    display: flex; /* Enable flexbox */
+    flex-wrap: wrap; /* Allow wrapping to the next row */
+    gap: 10px; /* Space between menu items */
+    justify-content: center; /* Center-align menu items */
   }
 
   .rounded-rectangle a {
-    font-size: 1rem; /* Smaller font size */
-    padding: 8px 12px; /* Adjusted padding */
+    flex: 1 1 calc(50% - 10px); /* Two items per row with spacing */
+    font-size: 1rem; /* Reduce font size */
+    padding: 8px 10px; /* Compact padding */
+    text-align: center; /* Center align text */
+    box-sizing: border-box; /* Ensure padding is included in width */
+  }
+
+  .menu-container {
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping to the next row */
+    gap: 15px; /* Space between menu items */
+    justify-content: center;
+    margin-top: -10px;
+  }
+
+  .menu-item {
+    flex: 1 1 calc(50% - 10px); /* Two items per line with spacing */
+    padding: 10px; /* Compact padding */
+    box-sizing: border-box; /* Prevent overflow */
+  }
+
+  .menu-image {
+    width: 100%; /* Keep images responsive */
+    height: auto;
+  }
+
+  .menu-title {
+    flex-direction: column; /* Stack title and price vertically */
+    margin-top: 5px; /* Reduce spacing */
+  }
+
+  .item-name,
+  .item-price {
+    font-size: 14px; /* Smaller font for compact layout */
+  }
+
+  .menu-sizes {
+    font-size: 12px; /* Reduce font size */
+    margin-top: 3px; /* Compact spacing */
   }
 }
+
